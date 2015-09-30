@@ -1,0 +1,31 @@
+{
+  "name": "quaint-coffeescript",
+  "description": "Embed CoffeeScript in Quaint",
+  "version": "0.0.0",
+  "format": "cjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/breuleux/quaint-coffeescript"
+  },
+  "keywords": [],
+  "author": "Olivier Breuleux",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "dependencies": {
+    "coffee-script": "^1.10.0",
+    "earlgrey-runtime": ">=0.0.11",
+    "quaint-javascript": ">=0.0.5"
+  },
+  "devDependencies": {
+    "earlgrey": ">=0.0.12",
+    "mocha": "^2.2.1",
+    "quaint": ">=0.0.8",
+    "earl-mocha": ">=0.0.2"
+  },
+  "scripts": {
+    "refresh": "earl compile -5vso lib/ src/",
+    "compile": "earl compile -5rvso lib/ src/",
+    "prepublish": "npm run compile",
+    "test": "mocha"
+  }
+}

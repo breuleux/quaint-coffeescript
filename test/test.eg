@@ -1,0 +1,39 @@
+
+require-macros:
+   earl-mocha ->
+      describe, it
+      before, after, before-each, after-each
+      assert, asserts
+      expect-error
+      xdescribe, xit
+
+require:
+   "../src" as qcs
+   quaint
+
+
+describe "quaint integration":
+
+   before-each:
+      @q = quaint{qcs}
+      @q.setenv{"a", 555}
+
+   it "simple expressions":
+      assert @q.translate{"1 + 1 = {1 + 1}", .html} === "1 + 1 = 2"
+
+   it "more complicated expressions":
+      assert @q.translate{"{a = 6 + 6; a}", .html} === "12"
+
+   it "declare and use variables":
+      assert @q.translate{"{a = 6 + 6}Twelve is {a}", .html} === "12Twelve is 12"
+
+   it "declare and use macros":
+      assert @q.translate{"{foo = () -> 'x'\nnull}[foo::][dump::errors]", .html} === "x"
+      assert @q.translate{s, .html}.trim{} === "<sup>x</sup>" where s = """
+      {
+         sup = (engine, body) ->
+            h 'sup', engine.gen(body)
+         null
+      }
+      sup :: x
+      """

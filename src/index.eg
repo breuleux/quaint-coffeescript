@@ -1,0 +1,15 @@
+
+require:
+   quaint-javascript ->
+      JavaScriptEvaluator
+   coffee-script
+
+main{*match} =
+   {@, options = {=}} when @is-quaint-engine ->
+      options.transform{code} =
+         coffee-script.compile{code, bare = true}
+      @evaluator = JavaScriptEvaluator{options}
+   {options = {=}} ->
+      {@} -> main{@, options}
+
+provide = main
