@@ -2,7 +2,11 @@
 quaint-coffeescript
 ===================
 
-Allows inline CoffeeScript code in Quaint markup.
+Allows inline
+[CoffeeScript](http://coffeescript.org/)
+code in
+[Quaint](http://breuleux.github.io/quaint)
+markup.
 
 Expressions in curly brackets will be evaluated in CoffeeScript.
 
