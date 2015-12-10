@@ -19,17 +19,17 @@ describe "quaint integration":
       @q.setenv{"a", 555}
 
    it "simple expressions":
-      assert @q.translate{"1 + 1 = {1 + 1}", .html} === "1 + 1 = 2"
+      assert @q.toHTML{"1 + 1 = {1 + 1}"} === "1 + 1 = 2"
 
    it "more complicated expressions":
-      assert @q.translate{"{a = 6 + 6; a}", .html} === "12"
+      assert @q.toHTML{"{a = 6 + 6; a}"} === "12"
 
    it "declare and use variables":
-      assert @q.translate{"{a = 6 + 6}Twelve is {a}", .html} === "12Twelve is 12"
+      assert @q.toHTML{"{a = 6 + 6}Twelve is {a}"} === "12Twelve is 12"
 
    it "declare and use macros":
-      assert @q.translate{"{foo = () -> 'x'\nnull}[foo::][dump::errors]", .html} === "x"
-      assert @q.translate{s, .html}.trim{} === "<sup>x</sup>" where s = """
+      assert @q.toHTML{"{foo = () -> 'x'\nnull}[foo::][dump::errors]"} === "x"
+      assert @q.toHTML{s}.trim{} === "<sup>x</sup>" where s = """
       {
          sup = (engine, body) ->
             h 'sup', engine.gen(body)
