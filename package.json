@@ -9,7 +9,8 @@
   },
   "keywords": [
     "quaint",
-    "quaintlang",
+    "quaint-plugin",
+    "quaint-language",
     "coffeescript"
   ],
   "author": "Olivier Breuleux",
@@ -18,12 +19,12 @@
   "dependencies": {
     "coffee-script": "^1.10.0",
     "earlgrey-runtime": ">=0.0.11",
-    "quaint-javascript": ">=0.0.5"
+    "quaint-javascript": ">=0.0.8"
   },
   "devDependencies": {
     "earlgrey": ">=0.0.12",
     "mocha": "^2.2.1",
-    "quaint": ">=0.0.13",
+    "quaint": ">=0.0.14",
     "earl-mocha": ">=0.0.2"
   },
   "scripts": {
