@@ -17,9 +17,9 @@
   "license": "MIT",
   "main": "./lib/index.js",
   "dependencies": {
-    "coffee-script": "^1.10.0",
-    "earlgrey-runtime": ">=0.0.11",
-    "quaint-javascript": ">=0.0.8"
+    "coffee-script": "^1.12.3",
+    "earlgrey-runtime": "^0.1.0",
+    "quaint-javascript": "^0.1.0"
   },
   "devDependencies": {
     "earlgrey": ">=0.0.12",
