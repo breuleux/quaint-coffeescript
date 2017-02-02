@@ -22,9 +22,9 @@
     "quaint-javascript": "^0.1.0"
   },
   "devDependencies": {
-    "earlgrey": ">=0.0.12",
+    "earlgrey": "^0.1.0",
     "mocha": "^2.2.1",
-    "quaint": ">=0.0.14",
+    "quaint": "^0.1.0",
     "earl-mocha": ">=0.0.2"
   },
   "scripts": {
